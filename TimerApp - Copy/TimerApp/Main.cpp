@@ -1,5 +1,6 @@
 #include <wx\wx.h>
 #include "TimerFrame.h"
+#include "MenuButton.h"
 class MyApp : public wxApp
 {
 public:
@@ -9,7 +10,7 @@ IMPLEMENT_APP(MyApp)
 DECLARE_APP(MyApp)
 bool MyApp::OnInit()
 {
-	TimerFrame *frame = new TimerFrame("Timer App");
+	MenuButton *frame = new MenuButton("Timer App");
 	frame->Show();
 	return true;
 }

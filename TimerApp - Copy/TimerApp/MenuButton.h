@@ -13,6 +13,7 @@ public:
 	void HelpMenu();
 	void PlayGame();
 	void ExitGame();
+	void fitSize();
 	void InitComponents();
 	~MenuButton();
 
@@ -20,6 +21,7 @@ private:
 	menu* Menu;
 	help* Help;
 	play* Play;
+	wxBoxSizer* boxSizer;
 	//exit* Exit;
 };
 

@@ -13,10 +13,21 @@ void MenuButton::MainMenu()
 	this->Menu->Show(true);
 }
 
+void MenuButton::fitSize()
+{
+	this->boxSizer->Fit(this);
+	this->boxSizer->SetSizeHints(this);
+	this->SetSize(wxSize(640, 480));
+	this->Layout();
+}
+
 void MenuButton::InitComponents()
 {
+	boxSizer = new wxBoxSizer(wxVERTICAL);
+
 	this->Menu = new menu(this);
 	this->Menu->Show(false);
+	this->boxSizer->Add(Menu, 1, wxEXPAND, 0);
 
 	this->Help = new help(this);
 	this->Help->Show(false);
@@ -24,6 +35,7 @@ void MenuButton::InitComponents()
 	this->Play = new play(this);
 	this->Play->Show(false);
 
+	SetSizer(boxSizer);
 	MainMenu();
 }
 
