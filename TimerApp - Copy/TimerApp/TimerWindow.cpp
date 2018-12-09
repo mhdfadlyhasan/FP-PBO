@@ -27,7 +27,7 @@ void TimerWindow::OnPaint(wxPaintEvent &event)
 }
 void TimerWindow::OnMovement(wxKeyEvent & event)
 {
-	this->box->Move(event.GetKeyCode());
+	//this->box->Move(event.GetKeyCode());
 	
 }
 void TimerWindow::OnTimer(wxTimerEvent &event)
@@ -36,7 +36,7 @@ void TimerWindow::OnTimer(wxTimerEvent &event)
 	wxMessageOutputDebug().Printf("wxTimer event %d.", counter++);
 	if (box != nullptr)
 	{
-		this->OnMovement();
+		//this->OnMovement();
 		Refresh();
 	}
 }

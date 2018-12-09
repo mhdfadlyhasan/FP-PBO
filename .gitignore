@@ -12,3 +12,7 @@ TimerApp - Copy/TimerApp/TimerApp.vcxproj
 *.idb
 *.pdb
 TimerApp - Copy/TimerApp/TimerApp.vcxproj
+*.exe
+*.ilk
+*.vcxproj
+*.filters
