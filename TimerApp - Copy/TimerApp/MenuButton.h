@@ -22,6 +22,5 @@ private:
 	help* Help;
 	play* Play;
 	wxBoxSizer* boxSizer;
-	//exit* Exit;
 };
 

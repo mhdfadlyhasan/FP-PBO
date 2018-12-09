@@ -6,8 +6,10 @@ class help : public wxPanel
 {
 public:
 	help(MenuButton* parent);
+	void OnBackButtonClick(wxCommandEvent &event);
 	~help();
 private:
 	MenuButton *parent;
+	DECLARE_EVENT_TABLE()
 };
 
