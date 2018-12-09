@@ -41,7 +41,7 @@ void MenuButton::fitSize()
 {
 	this->boxSizer->Fit(this);
 	this->boxSizer->SetSizeHints(this);
-	this->SetSize(wxSize(640, 480));
+	this->SetSize(wxSize(2000, 1000));
 	this->Layout();
 }
 

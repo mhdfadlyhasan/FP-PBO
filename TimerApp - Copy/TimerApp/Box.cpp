@@ -6,10 +6,10 @@ Box::Box()
 Box::Box(int x, int y, int width, int height)
 	: x(x), y(y), width(width), height(height)
 {
-	controls[keyUP] = WXK_CONTROL_W;
-	controls[keyDOWN] = WXK_CONTROL_S;
-	controls[keyRIGHT] = WXK_CONTROL_D;
-	controls[keyLEFT] = WXK_CONTROL_A;
+	controls[keyUP] = WXK_CONTROL_W + 64;
+	controls[keyDOWN] = WXK_CONTROL_S + 64;
+	controls[keyRIGHT] = WXK_CONTROL_D + 64;
+	controls[keyLEFT] = WXK_CONTROL_A + 64;
 }
 void Box::Draw(wxPaintDC &dc)
 {
@@ -18,22 +18,27 @@ void Box::Draw(wxPaintDC &dc)
 	dc.DrawRectangle(wxPoint(this->x, this->y), wxSize(this->width,
 		this->height));
 }
-void Box::Move(int activekey, int xAmount, int yAmount, int maxX, int maxY)
+void Box::Move(int x, int y)
 {
-	if (activekey == controls[keyUP])
-	{
+	this->x += x;
+	this->y += y;
+}
+void Box::setPos(int x, int y)
+{
+	this->x = x;
+	this->y = y;
+}
+int Box::getControls(int KEY)
+{
+	return controls[KEY];
+}
 
-	}
-	else if (activekey == controls[keyDOWN])
-	{
+int Box::getX()
+{
+	return x;
+}
 
-	}
-	else if (activekey == controls[keyRIGHT])
-	{
-
-	}
-	else if (activekey == controls[keyLEFT])
-	{
-
-	}
+int Box::getY()
+{
+	return y;
 }
