@@ -30,13 +30,13 @@
     <ClCompile Include="LevelMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="help.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="help.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="play.cpp">
@@ -56,13 +56,13 @@
     <ClInclude Include="LevelMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="help.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="help.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="play.h">

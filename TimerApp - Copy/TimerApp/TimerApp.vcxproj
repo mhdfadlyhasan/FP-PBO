@@ -20,14 +20,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="help.cpp" />
     <ClCompile Include="LevelMap.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="MenuButton.cpp" />
+    <ClCompile Include="play.cpp" />
     <ClCompile Include="TimerFrame.cpp" />
     <ClCompile Include="TimerWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="help.h" />
     <ClInclude Include="LevelMap.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="MenuButton.h" />
+    <ClInclude Include="play.h" />
     <ClInclude Include="TimerFrame.h" />
     <ClInclude Include="TimerWindow.h" />
   </ItemGroup>
