@@ -1,7 +1,8 @@
 #pragma once
 #include "wx\wx.h"
 #include <wx\dcclient.h>
-#define CONTROL 5
+#define CONTROL 4
+
 enum contKey
 {
 	keyUP = 0,

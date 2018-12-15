@@ -41,7 +41,7 @@ void MenuButton::fitSize()
 {
 	this->boxSizer->Fit(this);
 	this->boxSizer->SetSizeHints(this);
-	this->SetSize(wxSize(2000, 1000));
+	this->SetSize(wxSize(1080, 720));
 	this->Layout();
 }
 
@@ -60,6 +60,7 @@ void MenuButton::InitComponents()
 	this->Play = new play(this);
 	this->Play->Show(false);
 	this->boxSizer->Add(Play, 1, wxEXPAND, 0);
+
 
 	SetSizer(boxSizer);
 	MainMenu();

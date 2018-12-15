@@ -3,6 +3,8 @@
 Box::Box()
 {
 }
+
+
 Box::Box(int x, int y, int width, int height)
 	: x(x), y(y), width(width), height(height)
 {
@@ -15,8 +17,7 @@ void Box::Draw(wxPaintDC &dc)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxRED)));
 	dc.SetPen(wxPen(wxColor(*wxGREEN), 1, wxPENSTYLE_SOLID));
-	dc.DrawRectangle(wxPoint(this->x, this->y), wxSize(this->width,
-		this->height));
+	dc.DrawRectangle(wxPoint(this->x, this->y), wxSize(this->width,	this->height));
 }
 void Box::Move(int x, int y)
 {

@@ -4,6 +4,7 @@ class menu;
 class help;
 class play;
 class exit; 
+class TimerFrame;
 
 class MenuButton : public wxFrame
 {
@@ -22,5 +23,6 @@ private:
 	help* Help;
 	play* Play;
 	wxBoxSizer* boxSizer;
+	TimerFrame *frame;
 };
 

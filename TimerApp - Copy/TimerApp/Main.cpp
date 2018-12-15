@@ -1,5 +1,4 @@
 #include <wx\wx.h>
-#include "TimerFrame.h"
 #include "MenuButton.h"
 class MyApp : public wxApp
 {
