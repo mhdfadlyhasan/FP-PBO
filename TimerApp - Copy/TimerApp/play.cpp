@@ -24,7 +24,7 @@ play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 	SetBackgroundColour(wxColour(*wxWHITE));
 	timer = new wxTimer(this, TIMER_ID);
 	timer->Start(50);
-	Player[0] = new Box(0, 0, TileWidth, TileHeight);
+	Player[0] = new Box(176, 0, TileWidth, TileHeight);
 	Player[1] = new Box(144, 144, TileWidth, TileHeight);
 	currMap = new LevelMap();
 }
@@ -56,7 +56,7 @@ void play::OnPaint(wxPaintEvent &event)
 			char sTileID = this->currMap->GetTile(x, y);
 			switch (sTileID)
 			{
-			case '.': // Sky
+			case ' ': // Sky
 
 				break;
 			case '#': // Solid Block
@@ -90,11 +90,11 @@ void play::OnMovement(wxKeyEvent & event)
 	if (activekey == this->Player[0]->getControls(keyUP))
 	{
 
-		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth, this->Player[0]->getY() / TileHeight - 1) == '.')
+		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth, this->Player[0]->getY() / TileHeight - 1) == ' ')
 		{
 			this->Player[0]->Move(0, -16);
 		}
-		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth, this->Player[1]->getY() / TileHeight - 1) == '.')
+		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth, this->Player[1]->getY() / TileHeight - 1) == ' ')
 		{
 			this->Player[1]->Move(0, -16);
 		}
@@ -102,33 +102,33 @@ void play::OnMovement(wxKeyEvent & event)
 	}
 	else if (activekey == this->Player[0]->getControls(keyDOWN))
 	{
-		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth, this->Player[0]->getY() / TileHeight + 1) == '.')
+		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth, this->Player[0]->getY() / TileHeight + 1) == ' ')
 		{
 			this->Player[0]->Move(0, 16);
 		}
-		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth, this->Player[1]->getY() / TileHeight + 1) == '.')
+		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth, this->Player[1]->getY() / TileHeight + 1) == ' ')
 		{
 			this->Player[1]->Move(0, 16);
 		}
 	}
 	if (activekey == this->Player[0]->getControls(keyRIGHT))
 	{
-		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth + 1, this->Player[0]->getY() / TileHeight) == '.')
+		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth + 1, this->Player[0]->getY() / TileHeight) == ' ')
 		{
 			this->Player[0]->Move(16, 0);
 		}
-		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth + 1, this->Player[1]->getY() / TileHeight) == '.')
+		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth + 1, this->Player[1]->getY() / TileHeight) == ' ')
 		{
 			this->Player[1]->Move(16, 0);
 		}
 	}
 	else if (activekey == this->Player[0]->getControls(keyLEFT))
 	{
-		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth - 1, this->Player[0]->getY() / TileHeight) == '.')
+		if (this->currMap->GetTile(this->Player[0]->getX() / TileWidth - 1, this->Player[0]->getY() / TileHeight) == ' ')
 		{
 			this->Player[0]->Move(-16, 0);
 		}
-		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth - 1, this->Player[1]->getY() / TileHeight) == '.')
+		if (this->currMap->GetTile(this->Player[1]->getX() / TileWidth - 1, this->Player[1]->getY() / TileHeight) == ' ')
 		{
 			this->Player[1]->Move(-16, 0);
 		}
