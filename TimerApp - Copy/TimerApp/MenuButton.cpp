@@ -27,6 +27,7 @@ void MenuButton::HelpMenu()
 void MenuButton::PlayGame()
 {
 	this->Play->Show(true);
+	Play->SetFocus();
 	this->Help->Show(false);
 	this->Menu->Show(false);
 	fitSize();
@@ -34,6 +35,10 @@ void MenuButton::PlayGame()
 
 void MenuButton::ExitGame()
 {
+	
+	delete Play;
+	delete Help;
+	delete Menu;
 	delete this;
 }
 
@@ -41,7 +46,7 @@ void MenuButton::fitSize()
 {
 	this->boxSizer->Fit(this);
 	this->boxSizer->SetSizeHints(this);
-	this->SetSize(wxSize(1080, 720));
+	this->SetSize(wxSize(1080, 480));
 	this->Layout();
 }
 

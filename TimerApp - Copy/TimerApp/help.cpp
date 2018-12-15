@@ -6,7 +6,8 @@ END_EVENT_TABLE()
 
 help::help(MenuButton* parent) : wxPanel(parent, wxID_ANY), parent(parent)
 {
-	wxButton* back = new wxButton(this, 1001, wxT("Back"), wxPoint(100, 100), wxDefaultSize);
+	SetBackgroundColour(wxColour(*wxWHITE));
+	wxButton* back = new wxButton(this, 1001, wxT("Back"), wxPoint(600, 400), wxDefaultSize);
 }
 
 void help::OnBackButtonClick(wxCommandEvent & event)

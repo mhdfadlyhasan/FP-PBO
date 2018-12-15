@@ -10,10 +10,9 @@ EVT_TIMER(TIMER_ID, play::OnTimer)
 EVT_CHAR_HOOK(play::OnMovement)
 END_EVENT_TABLE()
 
-
 play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 {
-	wxButton* back = new wxButton(this, 1001, wxT("Back to Main Menu"), wxPoint(100, 100), wxDefaultSize);
+	wxButton* back = new wxButton(this, 1001, wxT("Back to Main Menu"), wxPoint(600, 400), wxDefaultSize);
 	SetBackgroundColour(wxColour(*wxWHITE));
 	timer = new wxTimer(this, TIMER_ID);
 	timer->Start(50);
@@ -26,8 +25,6 @@ void play::OnBackButtonClick(wxCommandEvent & event)
 {
 	parent->MainMenu();
 }
-
-
 
 play::~play()
 {
@@ -68,11 +65,8 @@ void play::OnMovementCheck()
 
 }
 
-
-
 void play::OnTimer(wxTimerEvent &event)
 {
-
 	static int counter = 0;
 	
 	if (Player[0] != nullptr)
