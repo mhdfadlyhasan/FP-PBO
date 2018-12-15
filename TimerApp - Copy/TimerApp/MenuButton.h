@@ -4,8 +4,7 @@ class menu;
 class help;
 class play;
 class exit; 
-class TimerFrame;
-
+class SubPlay;
 class MenuButton : public wxFrame
 {
 public:
@@ -13,6 +12,7 @@ public:
 	void MainMenu();
 	void HelpMenu();
 	void PlayGame();
+	void Playmaps1Game();
 	void ExitGame();
 	void fitSize();
 	void InitComponents();
@@ -23,6 +23,6 @@ private:
 	help* Help;
 	play* Play;
 	wxBoxSizer* boxSizer;
-	TimerFrame *frame;
+	SubPlay* Subplay;
 };
 

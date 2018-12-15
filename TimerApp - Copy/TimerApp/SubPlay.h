@@ -7,7 +7,7 @@ class SubPlay : public wxPanel
 public:
 	SubPlay(MenuButton *parent);
 	void OnBackButtonClick(wxCommandEvent &event);
-	void OnPlayChapter1
+	void OnPlayChapter1(wxCommandEvent &event);
 	~SubPlay();
 private:
 	MenuButton *parent;

@@ -7,10 +7,9 @@ class LevelMap;
 
 class play : public wxPanel
 {
-	
-
 public:
 	play(MenuButton* parent);
+	void back(wxCommandEvent &event);
 	void OnBackButtonClick(wxCommandEvent &event);
 	~play();
 	void OnPaint(wxPaintEvent &event);

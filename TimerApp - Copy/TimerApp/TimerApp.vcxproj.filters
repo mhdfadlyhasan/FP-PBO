@@ -36,6 +36,9 @@
     <ClCompile Include="play.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SubPlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="play.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SubPlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

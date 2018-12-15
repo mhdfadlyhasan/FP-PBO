@@ -8,11 +8,19 @@ EVT_BUTTON(1001, play::OnBackButtonClick)
 EVT_PAINT(play::OnPaint)
 EVT_TIMER(TIMER_ID, play::OnTimer)
 EVT_CHAR_HOOK(play::OnMovement)
+EVT_BUTTON(1002, play::back)
 END_EVENT_TABLE()
+
+
+void play::back(wxCommandEvent & event)
+{
+	parent->PlayGame();
+}
 
 play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 {
 	wxButton* back = new wxButton(this, 1001, wxT("Back to Main Menu"), wxPoint(600, 400), wxDefaultSize);
+	wxButton* submenu = new wxButton(this, 1002, wxT("Back to chapter select"), wxPoint(300, 400), wxDefaultSize);
 	SetBackgroundColour(wxColour(*wxWHITE));
 	timer = new wxTimer(this, TIMER_ID);
 	timer->Start(50);
