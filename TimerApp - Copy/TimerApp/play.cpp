@@ -24,8 +24,8 @@ play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 	SetBackgroundColour(wxColour(*wxWHITE));
 	timer = new wxTimer(this, TIMER_ID);
 	timer->Start(50);
-	Player[0] = new Box(176, 0, TileWidth, TileHeight);
-	Player[1] = new Box(144, 144, TileWidth, TileHeight);
+	Player[0] = new Box(192, 0, TileWidth, TileHeight);
+	Player[1] = new Box(672, 0, TileWidth, TileHeight);
 	currMap = new LevelMap();
 }
 

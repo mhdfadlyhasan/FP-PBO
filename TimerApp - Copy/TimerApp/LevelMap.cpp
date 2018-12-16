@@ -35,6 +35,7 @@ char LevelMap::GetTile (int x, int y)
 	else
 		return '*';
 }
+
 void LevelMap::Draw(wxPaintDC & dc, int x, int y)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxBLACK)));
