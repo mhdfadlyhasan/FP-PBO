@@ -6,6 +6,8 @@ class LevelMap
 private:
 	int LevelWidth;
 	int LevelHeight;
+	void levelmap1();
+	void levelmap2();
 	std::string Map;
 public:
 	LevelMap();
