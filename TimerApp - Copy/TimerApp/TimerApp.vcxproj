@@ -22,6 +22,8 @@
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="help.cpp" />
     <ClCompile Include="LevelMap.cpp" />
+    <ClCompile Include="Level_1.cpp" />
+    <ClCompile Include="Level_2.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="MenuButton.cpp" />
@@ -32,6 +34,8 @@
     <ClInclude Include="Box.h" />
     <ClInclude Include="help.h" />
     <ClInclude Include="LevelMap.h" />
+    <ClInclude Include="Level_1.h" />
+    <ClInclude Include="Level_2.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="play.h" />

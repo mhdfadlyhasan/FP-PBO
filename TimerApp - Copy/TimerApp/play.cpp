@@ -24,9 +24,7 @@ play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 	SetBackgroundColour(wxColour(*wxWHITE));
 	timer = new wxTimer(this, TIMER_ID);
 	timer->Start(50);
-	Player[0] = new Box(192, 0, TileWidth, TileHeight);
-	Player[1] = new Box(672, 0, TileWidth, TileHeight);
-	currMap = new LevelMap();
+
 }
 
 void play::OnBackButtonClick(wxCommandEvent & event)
@@ -47,6 +45,7 @@ void play::OnPaint(wxPaintEvent &event)
 	int TilesX = GetClientSize().GetWidth() / TileWidth;
 	int TilesY = GetClientSize().GetHeight() / TileHeight;
 	wxPaintDC pdc(this);
+	
 	this->Player[0]->Draw(pdc);
 	this->Player[1]->Draw(pdc);
 	for (int x = 0; x < TilesX; x++)
@@ -135,6 +134,26 @@ void play::OnMovement(wxKeyEvent & event)
 	}
 
 
+}
+
+void play::SetMap1()
+{
+	delete this->currMap;
+
+	this->currMap = new Level_1();
+	this->currMap->generateMap();
+	Player[0] = new Box(144, 0, TileWidth, TileHeight);
+	Player[1] = new Box(464, 0, TileWidth, TileHeight);
+
+}
+
+void play::SetMap2()
+{
+	delete this->currMap;
+	this->currMap = new Level_2();
+	this->currMap->generateMap();
+	Player[0] = new Box(192, 0, TileWidth, TileHeight);
+	Player[1] = new Box(672, 0, TileWidth, TileHeight);
 }
 
 

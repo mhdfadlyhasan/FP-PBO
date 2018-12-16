@@ -5,6 +5,7 @@ class help;
 class play;
 class exit; 
 class SubPlay;
+
 class MenuButton : public wxFrame
 {
 public:
@@ -12,16 +13,16 @@ public:
 	void MainMenu();
 	void HelpMenu();
 	void PlayGame();
-	void Playmaps1Game();
+	void PlaymapsGame();
 	void ExitGame();
 	void fitSize();
 	void InitComponents();
 	~MenuButton();
-
-private:
+	play* Play;
+protected:
 	menu* Menu;
 	help* Help;
-	play* Play;
+	
 	wxBoxSizer* boxSizer;
 	SubPlay* Subplay;
 };

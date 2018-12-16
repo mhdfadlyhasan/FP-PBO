@@ -27,7 +27,7 @@ void MenuButton::HelpMenu()
 	fitSize();
 }
 
-void MenuButton::Playmaps1Game()
+void MenuButton::PlaymapsGame()
 {
 	this->Play->Show(true);
 	this->Subplay->Show(false);
