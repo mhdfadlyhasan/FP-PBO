@@ -1,4 +1,5 @@
 #pragma once
+
 #include "wx/wx.h"
 #include "MenuButton.h"
 #include "LevelMap.h"
@@ -18,7 +19,6 @@ public:
 	void OnBackButtonClick(wxCommandEvent &event);
 	~play();
 	void OnPaint(wxPaintEvent &event);
-	void OnMovementCheck();
 	void OnTimer(wxTimerEvent &event);
 	void OnMovement(wxKeyEvent &event);
 	void SetMap1();

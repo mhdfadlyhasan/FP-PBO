@@ -92,10 +92,7 @@ void play::OnPaint(wxPaintEvent &event)
 		}
 	}
 }
-void play::OnMovementCheck()
-{
 
-}
 
 void play::OnTimer(wxTimerEvent &event)
 {

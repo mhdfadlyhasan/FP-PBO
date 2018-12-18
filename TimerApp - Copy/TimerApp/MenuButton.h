@@ -1,17 +1,17 @@
 #pragma once
 #include "wx/wx.h"
+#include <wx/sound.h>
 class menu;
-class help;
-class play;
-class exit; 
-class SubPlay;
 
+class play;
+class exit;
+class SubPlay;
+	
 class MenuButton : public wxFrame
 {
 public:
 	MenuButton(const wxString &title);
 	void MainMenu();
-	void HelpMenu();
 	void PlayGame();
 	void PlaymapsGame();
 	void ExitGame();
@@ -23,9 +23,7 @@ public:
 	play* Play;
 protected:
 	menu* Menu;
-	help* Help;
 	bool pause = true;
 	wxBoxSizer* boxSizer;
 	SubPlay* Subplay;
 };
-
