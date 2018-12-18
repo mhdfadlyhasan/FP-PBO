@@ -35,7 +35,8 @@ private:
 	wxTimer *timer;
 	Box *Player[2];
 	LevelMap *currMap;
-	
+	int mulHeight;
+	int mulWidth;
 	MenuButton *parent;
 	DECLARE_EVENT_TABLE()
 };

@@ -13,11 +13,11 @@ Box::Box(int x, int y, int width, int height)
 	controls[keyRIGHT] = WXK_CONTROL_D + 64;
 	controls[keyLEFT] = WXK_CONTROL_A + 64;
 }
-void Box::Draw(wxPaintDC &dc)
+void Box::Draw(wxPaintDC &dc, int mult)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxRED)));
 	dc.SetPen(wxPen(wxColor(*wxGREEN), 1, wxPENSTYLE_SOLID));
-	dc.DrawRectangle(wxPoint(this->x, this->y), wxSize(this->width,	this->height));
+	dc.DrawRectangle(wxPoint(this->x * mult, this->y * mult), wxSize(width * mult, height * mult));
 }
 void Box::Move(int x, int y)
 {

@@ -10,7 +10,7 @@ protected:
 public:
 	LevelMap();
 	char GetTile(int x, int y);
-	void Draw(wxPaintDC & dc, int x, int y);
+	void Draw(wxPaintDC & dc, int x, int y, int mult);
 	virtual void generateMap() = 0;
 	~LevelMap();
 };

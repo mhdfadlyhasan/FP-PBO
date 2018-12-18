@@ -21,7 +21,7 @@ private:
 public:
 	Box();
 	Box(int x, int y, int width, int height);
-	void Draw(wxPaintDC &dc);
+	void Draw(wxPaintDC & dc, int mult);
 	void Move(int x, int y);
 	void setPos(int x, int y);
 	int getControls(int KEY);

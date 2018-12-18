@@ -15,11 +15,11 @@ char LevelMap::GetTile (int x, int y)
 		return '*';
 }
 
-void LevelMap::Draw(wxPaintDC & dc, int x, int y)
+void LevelMap::Draw(wxPaintDC & dc, int x, int y, int mult)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxBLACK)));
 	dc.SetPen(wxPen(wxColor(*wxBLACK), 1, wxPENSTYLE_SOLID));
-	dc.DrawRectangle(wxPoint(x, y), wxSize(16,16));
+	dc.DrawRectangle(wxPoint(x * mult, y * mult), wxSize(16 * mult, 16 * mult));
 }
 
 

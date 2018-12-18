@@ -67,12 +67,12 @@ play::~play()
 
 void play::OnPaint(wxPaintEvent &event)
 {
-	int TilesX = GetClientSize().GetWidth() / TileWidth;
-	int TilesY = GetClientSize().GetHeight() / TileHeight;
+	mulWidth = GetClientSize().GetWidth()/680;
+	int TilesX = GetClientSize().GetWidth() / TileWidth * mulWidth;
+	int TilesY = GetClientSize().GetHeight() / TileHeight * mulWidth;
 	wxPaintDC pdc(this);
-	
-	this->Player[0]->Draw(pdc);
-	this->Player[1]->Draw(pdc);
+	this->Player[0]->Draw(pdc,mulWidth);
+	this->Player[1]->Draw(pdc, mulWidth);
 	for (int x = 0; x < TilesX; x++)
 	{
 		for (int y = 0; y < TilesY; y++)
@@ -84,7 +84,7 @@ void play::OnPaint(wxPaintEvent &event)
 
 				break;
 			case '#': // Solid Block
-				this->currMap->Draw(pdc, x * TileWidth, y * TileHeight);
+				this->currMap->Draw(pdc, x * TileWidth, y * TileHeight, mulWidth);
 				break;
 			default:
 				break;
@@ -215,6 +215,6 @@ void play::SetMap2()
 	delete this->currMap;
 	this->currMap = new Level_2();
 	this->currMap->generateMap();
-	Player[0] = new Box(192, 0, TileWidth, TileHeight);
-	Player[1] = new Box(672, 0, TileWidth, TileHeight);
+	Player[0] = new Box(160, 0, TileWidth, TileHeight);
+	Player[1] = new Box(464, 0, TileWidth, TileHeight);
 }
