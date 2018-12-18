@@ -64,6 +64,16 @@ void MenuButton::fitSize()
 	this->Layout();
 }
 
+void MenuButton::paused(bool s)
+{
+	this->pause = s;
+}
+
+bool MenuButton::ispaused()
+{
+	return this->pause;
+}
+
 void MenuButton::InitComponents()
 {
 	boxSizer = new wxBoxSizer(wxVERTICAL);

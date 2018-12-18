@@ -1,5 +1,7 @@
 #include <wx\wx.h>
 #include "MenuButton.h"
+
+
 class MyApp : public wxApp
 {
 public:

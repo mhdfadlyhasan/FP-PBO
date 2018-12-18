@@ -18,7 +18,6 @@ private:
 	int width;
 	int height;
 	int controls[CONTROL];
-	
 public:
 	Box();
 	Box(int x, int y, int width, int height);
@@ -28,7 +27,4 @@ public:
 	int getControls(int KEY);
 	int getX();
 	int getY();
-
-
-
 };
