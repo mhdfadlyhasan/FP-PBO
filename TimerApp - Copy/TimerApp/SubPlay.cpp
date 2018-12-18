@@ -15,7 +15,6 @@ SubPlay::SubPlay(MenuButton *parent) : wxPanel(parent, wxID_ANY), parent(parent)
 	wxButton* play2 = new wxButton(this, 1003, wxT("Map2"), wxPoint(400, 400), wxDefaultSize);
 }
 
-
 void SubPlay::OnBackButtonClick(wxCommandEvent & event)
 {
 	parent->MainMenu();
@@ -33,7 +32,6 @@ void SubPlay::OnPlayChapter2(wxCommandEvent & event)
 	parent->PlaymapsGame();
 	parent->Play->SetMap2();
 	parent->paused(false);
-
 }
 
 

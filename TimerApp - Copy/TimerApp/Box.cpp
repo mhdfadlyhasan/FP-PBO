@@ -4,9 +4,13 @@ Box::Box()
 {
 }
 
-
+void Box::back()
+{
+	this->x = this->realx;
+	this->y = this->realy;
+}
 Box::Box(int x, int y, int width, int height)
-	: x(x), y(y), width(width), height(height)
+	: x(x), y(y), width(width), height(height), realx(x),realy(y)
 {
 	controls[keyUP] = WXK_CONTROL_W + 64;
 	controls[keyDOWN] = WXK_CONTROL_S + 64;

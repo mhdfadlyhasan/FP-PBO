@@ -17,6 +17,8 @@ private:
 	int y;
 	int width;
 	int height;
+	int realx;
+	int realy;
 	int controls[CONTROL];
 public:
 	Box();
@@ -27,4 +29,5 @@ public:
 	int getControls(int KEY);
 	int getX();
 	int getY();
+	void back();
 };

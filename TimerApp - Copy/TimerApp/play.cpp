@@ -11,6 +11,7 @@ EVT_CHAR_HOOK(play::OnMovement)
 EVT_BUTTON(1002, play::back)
 EVT_BUTTON(1003, play::pause)
 EVT_BUTTON(1004, play::playgame)
+EVT_BUTTON(1005, play::retrys)
 END_EVENT_TABLE()
 
 
@@ -29,9 +30,11 @@ play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 	timer = new wxTimer(this, TIMER_ID);
 	backs = new wxButton(this, 1001, wxT("Back to Main Menu"), wxPoint(400, 400), wxDefaultSize);
 	submenus = new wxButton(this, 1002, wxT("Back to chapter select"), wxPoint(600, 400), wxDefaultSize);
-	continues = new wxButton(this, 1004, wxT("continue"), wxPoint(200, 400), wxDefaultSize);
 	pauses = new wxButton(this, 1003, wxT("pause game"), wxPoint(600, 400), wxDefaultSize);
+	continues = new wxButton(this, 1004, wxT("continue"), wxPoint(200, 400), wxDefaultSize);
+	retry = new wxButton(this, 1005, wxT("retry game"), wxPoint(300, 400), wxDefaultSize);
 	timer->Start(50);
+	this->retry->Show(true);
 	playgame(event);
 }
 
@@ -171,12 +174,14 @@ void play::OnMovement(wxKeyEvent & event)
 		{
 			parent->paused(true);
 			snap();
+			this->continues->Show(false);
 		}
 	}
 }
 
 void play::SetMap1()
 {
+	delete Player[0], Player[1];
 	delete this->currMap;
 
 	this->currMap = new Level_1();
@@ -195,12 +200,11 @@ void play::snap()
 		backs->Show(true);
 		submenus->Show(true);
 		continues->Show(true);
+		
 	}
 	else
 	{
-
 		pauses->Show(!false);
-
 		backs->Show(!true);
 		submenus->Show(!true);
 		continues->Show(!true);
@@ -209,9 +213,17 @@ void play::snap()
 
 void play::SetMap2()
 {
+	delete Player[0], Player[1];
 	delete this->currMap;
 	this->currMap = new Level_2();
 	this->currMap->generateMap();
 	Player[0] = new Box(160, 0, TileWidth, TileHeight);
 	Player[1] = new Box(464, 0, TileWidth, TileHeight);
+}
+
+void play::retrys(wxCommandEvent &event)
+{
+	playgame(event);
+	Player[0]->back();
+	Player[1]->back();
 }

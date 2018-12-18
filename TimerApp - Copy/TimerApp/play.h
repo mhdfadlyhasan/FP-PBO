@@ -24,9 +24,11 @@ public:
 	void SetMap1();
 	void snap();
 	void SetMap2();
+	void retrys(wxCommandEvent &event);
 
 private:
 	wxButton* backs;
+	wxButton* retry;
 	wxButton* submenus;
 	wxButton* continues;
 	wxButton* pauses;
