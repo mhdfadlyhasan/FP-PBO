@@ -16,6 +16,9 @@ END_EVENT_TABLE()
 
 void play::back(wxCommandEvent & event)
 {
+	timer->Start(50);
+	parent->paused(false);
+	snap();
 	parent->PlayGame();
 }
 
@@ -34,31 +37,23 @@ play::play(MenuButton * parent) : wxPanel(parent), parent(parent)
 
 void play::pause(wxCommandEvent &event)
 {
-	pauses->Show(false);
-
-	backs->Show(true);
-	submenus->Show(true);
-	continues->Show(true);
 	parent->paused(true);
+	snap();
 	timer->Stop();
 }
 
 void play::playgame(wxCommandEvent & event)
 {
 	parent->paused(false);
-	pauses->Show(!false);
-	backs->Show(!true);
-	submenus->Show(!true);
-	continues->Show(!true);
+	snap();
 	timer->Start(50);
 }
 
 void play::OnBackButtonClick(wxCommandEvent & event)
 {
 	parent->paused(false);
-	backs->Show(!true);
-	submenus->Show(!true);
-	continues->Show(!true);
+	snap();
+	timer->Start(50);
 	parent->MainMenu();
 }
 
@@ -179,6 +174,27 @@ void play::SetMap1()
 
 }
 
+void play::snap()
+{
+	if (parent->ispaused())
+	{
+		pauses->Show(false);
+
+		backs->Show(true);
+		submenus->Show(true);
+		continues->Show(true);
+	}
+	else
+	{
+
+		pauses->Show(!false);
+
+		backs->Show(!true);
+		submenus->Show(!true);
+		continues->Show(!true);
+	}
+}
+
 void play::SetMap2()
 {
 	delete this->currMap;
@@ -187,6 +203,3 @@ void play::SetMap2()
 	Player[0] = new Box(192, 0, TileWidth, TileHeight);
 	Player[1] = new Box(672, 0, TileWidth, TileHeight);
 }
-
-
-

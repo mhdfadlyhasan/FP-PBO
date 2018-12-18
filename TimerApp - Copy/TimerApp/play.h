@@ -22,6 +22,7 @@ public:
 	void OnTimer(wxTimerEvent &event);
 	void OnMovement(wxKeyEvent &event);
 	void SetMap1();
+	void snap();
 	void SetMap2();
 
 private:

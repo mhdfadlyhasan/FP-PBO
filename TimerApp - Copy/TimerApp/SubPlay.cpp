@@ -25,12 +25,14 @@ void SubPlay::OnPlayChapter1(wxCommandEvent & event)
 {
 	parent->PlaymapsGame();
 	parent->Play->SetMap1();
+	parent->paused(false);
 }
 
 void SubPlay::OnPlayChapter2(wxCommandEvent & event)
 {
 	parent->PlaymapsGame();
 	parent->Play->SetMap2();
+	parent->paused(false);
 
 }
 
