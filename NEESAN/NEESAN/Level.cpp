@@ -75,15 +75,15 @@ Level::~Level()
 
 void Level::OnPaint(wxPaintEvent &event)
 {
-	mulWidth = GetClientSize().GetWidth() / 680;
+	mulWidth = GetClientSize().GetWidth() / 680; //mulWidth digunakan untuk me-resize isi level
 	int TilesX = GetClientSize().GetWidth() / TileWidth * mulWidth;
 	int TilesY = GetClientSize().GetHeight() / TileHeight * mulWidth;
-	RepositionButton();
-	wxAutoBufferedPaintDC pdc(this);
+	RepositionButton(); //digunakan untuk mengatur posisi button jika di-resize
+	wxAutoBufferedPaintDC pdc(this); // double buffering agar tidak flicker
 	PaintBackground(pdc);
 	this->player[0]->Draw(pdc,mulWidth);
 	this->player[1]->Draw(pdc, mulWidth);
-	for (int x = 0; x < TilesX; x++)
+	for (int x = 0; x < TilesX; x++)// digunakan untuk menggambar map berdasarkan string yang ada di LevelMap
 	{
 		for (int y = 0; y < TilesY; y++)
 		{
@@ -121,6 +121,7 @@ void Level::OnMovement(wxKeyEvent & event)
 	int activekey = 0;
 	if (!parent->ispaused())
 	{
+		//digunakan untuk menegecek jika player sudah mencapai goal
 		if (this->currMap->GetTile(this->player[0]->getX() / TileWidth, this->player[0]->getY() / TileHeight) == 'W' &&
 			this->currMap->GetTile(this->player[1]->getX() / TileWidth, this->player[0]->getY() / TileHeight) == 'W')
 		{
@@ -130,6 +131,7 @@ void Level::OnMovement(wxKeyEvent & event)
 		}
 
 		int activekey = event.GetKeyCode();
+		//digunakan untuk pergerakan, mengecek jika tile yang dituju valid atau tidak ('#' berarti tembok)
 		if (activekey == this->player[0]->getControls(keyUP))
 		{
 
@@ -189,7 +191,7 @@ void Level::OnMovement(wxKeyEvent & event)
 	}
 }
 
-void Level::SetMap1()
+void Level::SetMap1() //digunakan untuk menampilkan level 1
 {
 	delete player[0], player[1];
 	delete this->currMap;
@@ -201,7 +203,7 @@ void Level::SetMap1()
 
 }
 
-void Level::snap()
+void Level::snap() // menampilkan pause menu
 {
 	if (parent->ispaused())
 	{
@@ -221,7 +223,7 @@ void Level::snap()
 	}
 }
 
-void Level::SetMap2()
+void Level::SetMap2() //digunakan untuk menampilkan level 
 {
 	delete player[0], player[1];
 	delete this->currMap;
@@ -238,7 +240,7 @@ void Level::retrys(wxCommandEvent &event)
 	player[1]->back();
 }
 
-void Level::RepositionButton()
+void Level::RepositionButton() //digunakan untuk mengatur posisi button jika di-resize
 {
 	backs->SetPosition( wxPoint(400, 320 * mulWidth));
 	submenus->SetPosition(wxPoint(600, 320 * mulWidth));

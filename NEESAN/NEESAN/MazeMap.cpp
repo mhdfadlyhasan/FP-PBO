@@ -7,7 +7,7 @@ MazeMap::MazeMap()
 
 }
 
-char MazeMap::GetTile (int x, int y)
+char MazeMap::GetTile (int x, int y) // digunakan untuk me-return char yang menggambarkan map
 {
 	if (x >= 0 && x < LevelWidth && y >= 0 && y < LevelHeight)
 		return Map[y * LevelWidth + x];

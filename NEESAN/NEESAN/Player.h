@@ -26,7 +26,6 @@ public:
 	Player(int x, int y, int width, int height);
 	void Draw(wxAutoBufferedPaintDC & dc, int mult);
 	void Move(int x, int y);
-	void setPos(int x, int y);
 	int getControls(int KEY);
 	int getX();
 	int getY();

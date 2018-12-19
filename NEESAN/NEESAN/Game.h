@@ -19,7 +19,6 @@ public:
 	void InitComponents();
 	~Game();
 	Level* level;
-	//static int mult;
 private:
 
 

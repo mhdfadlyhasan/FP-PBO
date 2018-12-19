@@ -28,11 +28,7 @@ void Player::Move(int x, int y)
 	this->x += x;
 	this->y += y;
 }
-void Player::setPos(int x, int y)
-{
-	this->x = x;
-	this->y = y;
-}
+
 int Player::getControls(int KEY)
 {
 	return controls[KEY];

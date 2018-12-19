@@ -8,7 +8,7 @@ class Level;
 class LevelSelect : public wxPanel
 {
 public:
-	LevelSelect(Game *parent);
+	LevelSelect(Game *parent); //menu untuk memilih level
 	void OnBackButtonClick(wxCommandEvent &event);
 	void OnPlayChapter1(wxCommandEvent &event);
 	void OnPlayChapter2(wxCommandEvent &event);

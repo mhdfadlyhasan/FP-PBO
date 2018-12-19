@@ -13,7 +13,7 @@ DECLARE_APP(MyApp)
 
 bool MyApp::OnInit()
 {
-	Game *frame = new Game("Game");
+	Game *frame = new Game("Nathan, Emily, and Everyone is Straying At Night");
 	frame->Show();
 	return true;
 }

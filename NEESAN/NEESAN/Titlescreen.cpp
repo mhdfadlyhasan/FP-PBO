@@ -17,10 +17,6 @@ TitleScreen::TitleScreen(Game* parent) : wxPanel(parent, wxID_ANY), parent(paren
 	SetBackgroundColour(wxColour(*wxWHITE));
 }
 
-
-
-
-
 TitleScreen::~TitleScreen()
 {
 }
