@@ -1,17 +1,18 @@
 #pragma once
 #include <string>
 #include <wx\dcclient.h>
-class LevelMap
+#include <wx/dcbuffer.h>
+class MazeMap
 {
 protected:
 	int LevelWidth;
 	int LevelHeight;
 	std::string Map;
 public:
-	LevelMap();
+	MazeMap();
 	char GetTile(int x, int y);
-	void Draw(wxPaintDC & dc, int x, int y, int mult);
+	void Draw(wxAutoBufferedPaintDC & dc, int x, int y, int mult);
 	virtual void generateMap() = 0;
-	~LevelMap();
+	~MazeMap();
 };
 

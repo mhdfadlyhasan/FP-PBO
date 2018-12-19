@@ -1,30 +1,32 @@
 #pragma once
 
 #include "wx/wx.h"
-#include "MenuButton.h"
-#include "LevelMap.h"
+#include "Game.h"
+#include "MazeMap.h"
 #include "Level_1.h"
 #include "Level_2.h"
-class Box;
-class LevelMap;
+class Player;
+class MazeMap;
 
-class play : public wxPanel
+class Level : public wxPanel
 {
 public:
 	
-	play(MenuButton* parent);
+	Level(Game * parent);
 	void back(wxCommandEvent &event);
 	void pause(wxCommandEvent &event);
 	void playgame(wxCommandEvent &event);
 	void OnBackButtonClick(wxCommandEvent &event);
-	~play();
+	~Level();
 	void OnPaint(wxPaintEvent &event);
+	void PaintBackground(wxDC & dc);
 	void OnTimer(wxTimerEvent &event);
 	void OnMovement(wxKeyEvent &event);
 	void SetMap1();
 	void snap();
 	void SetMap2();
 	void retrys(wxCommandEvent &event);
+	void RepositionButton();
 
 private:
 	wxButton* backs;
@@ -35,10 +37,9 @@ private:
 	const int TileWidth = 16;
 	const int TileHeight = 16;
 	wxTimer *timer;
-	Box *Player[2];
-	LevelMap *currMap;
-	int mulHeight;
+	Player *player[2];
+	MazeMap *currMap;
 	int mulWidth;
-	MenuButton *parent;
+	Game *parent;
 	DECLARE_EVENT_TABLE()
 };

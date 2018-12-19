@@ -1,16 +1,17 @@
 #pragma once
 #include "wx/wx.h"
-#include "MenuButton.h"
+#include "Game.h"
 
-class menu : public wxPanel
+
+class TitleScreen : public wxPanel
 {
 public:
-	menu(MenuButton* parent);
-	~menu();
+	TitleScreen(Game* parent);
+	~TitleScreen();
 	
 	void OnPlayButtonClick(wxCommandEvent &event);
 	void OnExitClick(wxCommandEvent &event);
 private:
-	MenuButton *parent;
+	Game *parent;
 	DECLARE_EVENT_TABLE()
 };

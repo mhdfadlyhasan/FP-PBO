@@ -1,15 +1,15 @@
-#include "Box.h"
+#include "Player.h"
 
-Box::Box()
+Player::Player()
 {
 }
 
-void Box::back()
+void Player::back()
 {
 	this->x = this->realx;
 	this->y = this->realy;
 }
-Box::Box(int x, int y, int width, int height)
+Player::Player(int x, int y, int width, int height)
 	: x(x), y(y), width(width), height(height), realx(x),realy(y)
 {
 	controls[keyUP] = WXK_CONTROL_W + 64;
@@ -17,33 +17,33 @@ Box::Box(int x, int y, int width, int height)
 	controls[keyRIGHT] = WXK_CONTROL_D + 64;
 	controls[keyLEFT] = WXK_CONTROL_A + 64;
 }
-void Box::Draw(wxPaintDC &dc, int mult)
+void Player::Draw(wxAutoBufferedPaintDC &dc, int mult)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxRED)));
 	dc.SetPen(wxPen(wxColor(*wxGREEN), 1, wxPENSTYLE_SOLID));
 	dc.DrawRectangle(wxPoint(this->x * mult, this->y * mult), wxSize(width * mult, height * mult));
 }
-void Box::Move(int x, int y)
+void Player::Move(int x, int y)
 {
 	this->x += x;
 	this->y += y;
 }
-void Box::setPos(int x, int y)
+void Player::setPos(int x, int y)
 {
 	this->x = x;
 	this->y = y;
 }
-int Box::getControls(int KEY)
+int Player::getControls(int KEY)
 {
 	return controls[KEY];
 }
 
-int Box::getX()
+int Player::getX()
 {
 	return x;
 }
 
-int Box::getY()
+int Player::getY()
 {
 	return y;
 }

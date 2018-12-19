@@ -1,5 +1,5 @@
 #include <wx\wx.h>
-#include "MenuButton.h"
+#include "Game.h"
 
 
 class MyApp : public wxApp
@@ -13,7 +13,7 @@ DECLARE_APP(MyApp)
 
 bool MyApp::OnInit()
 {
-	MenuButton *frame = new MenuButton("Timer App");
+	Game *frame = new Game("Game");
 	frame->Show();
 	return true;
 }

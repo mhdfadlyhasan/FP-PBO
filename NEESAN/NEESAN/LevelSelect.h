@@ -1,19 +1,19 @@
 #pragma once
 #include "wx/wx.h"
-#include "MenuButton.h"
-#include "play.h"
+#include "Game.h"
+#include "Level.h"
 
-class play;
+class Level;
 
-class SubPlay : public wxPanel
+class LevelSelect : public wxPanel
 {
 public:
-	SubPlay(MenuButton *parent);
+	LevelSelect(Game *parent);
 	void OnBackButtonClick(wxCommandEvent &event);
 	void OnPlayChapter1(wxCommandEvent &event);
 	void OnPlayChapter2(wxCommandEvent &event);
-	~SubPlay();
+	~LevelSelect();
 private:
-	MenuButton *parent;
+	Game *parent;
 	DECLARE_EVENT_TABLE()
 };

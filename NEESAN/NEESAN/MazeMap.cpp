@@ -1,13 +1,13 @@
-#include "LevelMap.h"
+#include "MazeMap.h"
 
 
 
-LevelMap::LevelMap()
+MazeMap::MazeMap()
 {
 
 }
 
-char LevelMap::GetTile (int x, int y)
+char MazeMap::GetTile (int x, int y)
 {
 	if (x >= 0 && x < LevelWidth && y >= 0 && y < LevelHeight)
 		return Map[y * LevelWidth + x];
@@ -15,7 +15,7 @@ char LevelMap::GetTile (int x, int y)
 		return '*';
 }
 
-void LevelMap::Draw(wxPaintDC & dc, int x, int y, int mult)
+void MazeMap::Draw(wxAutoBufferedPaintDC & dc, int x, int y, int mult)
 {
 	dc.SetBrush(wxBrush(wxColour(*wxBLACK)));
 	dc.SetPen(wxPen(wxColor(*wxBLACK), 1, wxPENSTYLE_SOLID));
@@ -23,6 +23,6 @@ void LevelMap::Draw(wxPaintDC & dc, int x, int y, int mult)
 }
 
 
-LevelMap::~LevelMap()
+MazeMap::~MazeMap()
 {
 }

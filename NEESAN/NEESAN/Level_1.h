@@ -1,7 +1,7 @@
 #pragma once
-#include "LevelMap.h"
+#include "MazeMap.h"
 class Level_1 :
-	public LevelMap
+	public MazeMap
 {
 public:
 	Level_1();

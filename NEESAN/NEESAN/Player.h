@@ -1,6 +1,7 @@
 #pragma once
 #include "wx\wx.h"
 #include <wx\dcclient.h>
+#include <wx/dcbuffer.h>
 #define CONTROL 4
 
 enum contKey
@@ -10,7 +11,7 @@ enum contKey
 	keyLEFT,
 	keyRIGHT
 };
-class Box
+class Player
 {
 private:
 	int x;
@@ -21,9 +22,9 @@ private:
 	int realy;
 	int controls[CONTROL];
 public:
-	Box();
-	Box(int x, int y, int width, int height);
-	void Draw(wxPaintDC & dc, int mult);
+	Player();
+	Player(int x, int y, int width, int height);
+	void Draw(wxAutoBufferedPaintDC & dc, int mult);
 	void Move(int x, int y);
 	void setPos(int x, int y);
 	int getControls(int KEY);
